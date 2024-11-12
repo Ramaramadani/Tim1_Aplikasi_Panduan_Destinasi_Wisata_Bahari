@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: aliceblue;
+}
+.navbar {
+  background: rgb(3, 115, 132);
+  padding: 0px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.logo {
+  height: 50px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 30px;
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+}
+nav a:hover {
+  color: rgb(90, 170, 241);
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.text-area {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 30px;
+  background-color: white;
+  border: solid;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgb(3, 115, 132);
+}
+
+.card-wrapper {
+  max-width: 1100px;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+
+.card-list .card-item .image-item {
+  user-select: none;
+  width: 320px;
+  height: 410px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: left;
+  margin-left: 15px;
+}
+
+.sub {
+  width: 310px;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  right: 10px;
+  padding: 4px;
+  color: white;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0px;
+}
+
+.description {
+  width: 310px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  right: 10px;
+  color: white;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: 5px;
+}
