@@ -159,7 +159,7 @@
                 <a href="destinasi.php">DESTINASI</a>
                 <a href="promo.php">PROMO</a>
             </nav>
-            <a href="login1.php" id="user">
+            <a href="login.php" id="user">
                 <img src="user-circle-fill.png" />
             </a>
         </div>
