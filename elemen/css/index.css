@@ -1,3 +1,4 @@
+/* Reset CSS */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +7,11 @@
   font-weight: 600;
   font-style: normal;
 }
+
+/* Body styling */
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -15,9 +19,8 @@ body {
   background-size: cover;
 }
 
+/* Navbar styling */
 .navbar {
-  background: rgba(2, 75, 118, 0.9);
-  padding: 0px;
   color: white;
   position: fixed;
   top: 0;
@@ -25,66 +28,142 @@ body {
   width: 100%;
   z-index: 1000;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0);
+  padding: 10px 20px;
 }
 
 .logo {
-  height: 60px;
+  max-width: 120px;
+  height: auto;
 }
 
-.judul {
-  height: 80%;
-  padding: 10px;
-  margin: 60px auto;
-  width: 50%;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-bottom: 120px;
+nav {
+  display: flex;
+  gap: 20px;
 }
+
 nav a {
   color: white;
   text-decoration: none;
-  margin: 30px;
-  font-size: 15px;
-  justify-content: center;
-  text-align: center;
+  font-size: 1rem;
 }
+
 nav a:hover {
   color: rgb(90, 170, 241);
 }
-.search-bar {
-  width: 530px;
-  position: absolute;
-  left: 49%;
-  top: 5%;
-  transform: translate(-50%, -50%);
-  height: 55px;
-  border-radius: 40px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.509);
+
+/* User avatar styling */
+.user-avatar {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
   align-items: center;
-  margin-top: 370px;
+  justify-content: center;
+  text-transform: uppercase;
 }
+
+.logout-button img {
+  width: 25px; /* Atur lebar sesuai kebutuhan */
+  height: 25px; /* Atur tinggi sesuai kebutuhan */
+  object-fit: contain; /* Pastikan gambar tetap proporsional */
+  cursor: pointer; /* Tambahkan pointer untuk menampilkan ikon klik */
+  margin-left: 10px; /* Sesuaikan jarak antara tombol logout dengan elemen lain */
+}
+
+#logout {
+  padding: 20px;
+}
+
+/* Judul styling */
+.judul {
+  width: 90%;
+  max-width: 800px;
+  margin: 5px auto 50px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Search bar styling */
+.search-bar {
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.509);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -70px;
+}
+
 .search-text {
+  flex: 1;
   line-height: 20px;
   background: none;
   border: none;
   outline: none;
-  width: 480px;
-  padding-left: 15px;
-  font-size: 25px;
+  font-size: 18px;
   color: rgb(3, 80, 148);
+  padding-left: 15px;
 }
+
 .material-symbols-outlined {
-  line-height: 40px;
+  margin-left: 290px;
+  width: 25px;
+  height: 25px;
   border: none;
   outline: none;
   background: none;
   cursor: pointer;
-  width: 25px;
-  height: 25px;
+}
+
+/* Responsive design using media queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .judul {
+    margin: 80px auto 20px;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 80px;
+  }
+
+  .search-text {
+    font-size: 16px;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
 }

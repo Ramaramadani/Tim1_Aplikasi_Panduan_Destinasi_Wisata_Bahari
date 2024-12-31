@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Didact Gothic", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+/* Aturan untuk navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff; /* Bisa disesuaikan */
+  position: relative; /* Menambahkan relative positioning untuk navbar */
+}
+
+/* Menempatkan user avatar di pojok kanan atas */
+#user {
+  position: absolute; /* Menjadikan elemen user terpisah dan bisa diposisikan secara bebas */
+  top: 10px; /* Sedikit dari atas */
+  right: 20px; /* Sedikit dari kanan */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  background-color: #ff5733; /* Warna latar belakang inisial, sesuaikan dengan preferensi */
+}
+
+/* Menampilkan nama pengguna di bawah avatar saat hover */
+.user-name {
+  display: none;
+  position: absolute;
+  top: 50px; /* Tempatkan nama sedikit lebih bawah */
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#user:hover .user-name {
+  display: block; /* Nama pengguna muncul saat hover */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1e6e9e;
+}
+.review-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.review-container h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.review-container label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.review-container textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #0000ff;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.review-container .stars {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin: 0 auto 20px auto;
+  cursor: pointer;
+}
+.review-container .stars i {
+  font-size: 24px;
+  color: #0000ff;
+  transition: color 0.2s;
+}
+.review-container .stars i.active {
+  color: #ffd700;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.review-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e6e9e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.review-container button:hover {
+  background-color: #0033cc;
+}

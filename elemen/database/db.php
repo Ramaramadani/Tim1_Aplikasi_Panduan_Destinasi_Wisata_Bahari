@@ -2,7 +2,7 @@
 $servername = "localhost"; // or your database server
 $username = "root"; // your MySQL username
 $password = ""; // your MySQL password
-$dbname = "userdb"; // the database you created
+$dbname = "oceara"; // the database you created
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

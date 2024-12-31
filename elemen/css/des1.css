@@ -16,6 +16,7 @@ body {
   background-size: cover;
 }
 
+/* Pastikan navbar tetap di atas dan avatar diposisikan di kanan */
 .navbar {
   padding: 5px;
   position: fixed;
@@ -26,9 +27,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0);
+}
+
+/* Atur posisi user avatar dan nama di pojok kanan atas */
+#user {
+  display: flex;
+  flex-direction: column;  /* Menyusun avatar dan nama secara vertikal */
+  align-items: center;     /* Memastikan elemen di tengah */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;  /* Memberikan jarak antara avatar dan nama */
+}
+
+.user-name {
+  font-size: 14px; /* Ukuran font untuk nama */
+  color: #333; /* Warna teks untuk nama */
+  text-align: center; /* Menjaga nama tetap terpusat di bawah avatar */
 }
 
 img {
@@ -41,7 +69,7 @@ img {
   width: 100px;
   position: absolute;
   left: 6%;
-  top: 50%;
+  top: 200%;
   transform: translate(-50%, -50%);
   height: 40px;
   border-radius: 12px;
@@ -55,7 +83,7 @@ img {
   width: 50px;
   position: absolute;
   left: 25%;
-  top: 5%;
+  top: 7%;
   color: white;
   font-size: 25px;
   border: none;
@@ -65,7 +93,7 @@ img {
 }
 
 .material-symbols-outlined {
-  line-height: 20px;
+  line-height: 40px;
   border: none;
   outline: none;
   background: none;
@@ -114,6 +142,32 @@ footer {
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+#edit-menu {
+  position: fixed;  /* Gunakan posisi fixed untuk menempatkan menu di tengah layar */
+  top: 50%;  /* Menempatkan menu di tengah secara vertikal */
+  left: 50%;  /* Menempatkan menu di tengah secara horizontal */
+  transform: translate(-50%, -50%);  /* Memastikan menu benar-benar terpusat */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 100;
+  display: none; /* Agar menu tidak ditampilkan saat pertama kali */
+}
+
+#edit-menu button {
+  background-color: #037384;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#edit-menu button:hover {
+  background-color: #025f62;
+}
 
 .container img:hover {
   transform: scale(1.7);
@@ -124,10 +178,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute; /* Agar tidak memengaruhi tata letak gambar */
-  top: 75%; /* Posisi vertikal sejajar tengah */
-  transform: translateY(-50%); /* Koreksi agar benar-benar tengah */
-  z-index: 2; /* Supaya muncul di atas gambar */
+  position: absolute;
+  top: 75%;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .card-wrapper {
@@ -154,4 +208,37 @@ footer {
 
 .card-list .card-item .image-item:hover {
   transform: scale(1.1);
+}
+
+#map-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+#map-container iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#close-map {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #037384;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 1100;
 }

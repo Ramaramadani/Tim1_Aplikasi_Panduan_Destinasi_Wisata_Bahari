@@ -38,6 +38,23 @@ body {
   margin-left: 90px;
 }
 
+/* User avatar styling */
+.user-avatar {
+  display: inline-block;
+  width: 40px; /* Pastikan tinggi dan lebar sama */
+  height: 40px;
+  border-radius: 50%; /* Membuat elemen berbentuk bulat */
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: #007bff; /* Warna latar belakang (contoh) */
+  overflow: hidden; /* Memotong konten yang keluar dari lingkaran */
+}
+
 nav a {
   color: white;
   text-decoration: none;

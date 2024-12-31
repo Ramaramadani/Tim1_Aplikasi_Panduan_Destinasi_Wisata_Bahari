@@ -1,0 +1,119 @@
+body {
+  font-family: "Didact Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1e6e9e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ticket-container {
+  background-color: #fdfbfb;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertikal rata tengah */
+  gap: 30px; /* Jarak antara logo dan form */
+}
+
+.logo {
+  flex-shrink: 0; /* Cegah logo mengecil */
+  text-align: center;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.form-section {
+  flex-grow: 1; /* Form mengambil sisa ruang */
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #1e6e9e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #15557b;
+}
+
+.output {
+  background-color: rgb(255, 252, 249);
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  width: 580px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.623);
+  gap: 30px; /* Jarak antara logo dan form */
+  margin-top: 20px; /* Tambahkan jarak dari blok atas */
+}
+
+.output .left-section {
+  flex: 1;
+  text-align: center;
+  border-right: 2px solid #000; /* Garis pembatas vertikal */
+}
+
+.output .left-section img {
+  width: 60%;
+  height: auto;
+  margin-top: 100px;
+}
+
+.output .right-section {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.output .right-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+.output .right-section p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.output .right-section .kode-box {
+  border: 1px solid #000;
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
