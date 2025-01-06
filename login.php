@@ -1,43 +1,54 @@
 <?php
-include 'elemen/database/db.php'; // Include database connection
+include 'elemen/database/db.php'; // Termasuk koneksi database
 session_start(); // Mulai sesi
 
-// Periksa apakah form telah disubmit
+// Pseudocode: Periksa apakah formulir telah disubmit (metode POST)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ambil input dari form
+    // Pseudocode: Ambil input email dan kata sandi dari formulir
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Cek email di database menggunakan prepared statement
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Periksa apakah email ditemukan
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-
-        // Verifikasi password
-        if (password_verify($password, $row['password'])) {
-            // Login berhasil
-            $_SESSION['user_id'] = $row['id']; // Simpan user ID di sesi
-            $_SESSION['email'] = $row['email']; // Simpan email di sesi
-            $_SESSION['name'] = $row['name']; // Simpan nama di sesi
-            header("Location: index.php"); // Redirect ke halaman utama
-            exit;
-        } else {
-            // Password salah
-            $error_message = "Kata sandi salah.";
+    try {
+        // Pseudocode: Siapkan query untuk mencari email di database menggunakan prepared statement
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        if (!$stmt) {
+            throw new Exception("Error preparing query: " . $conn->error); // Menangani kesalahan pada prepared statement
         }
-    } else {
-        // Email tidak ditemukan
-        $error_message = "Email tidak terdaftar.";
-    }
+        
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    $stmt->close();
+        // Pseudocode: Periksa apakah email ditemukan di database
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            // Pseudocode: Verifikasi kata sandi dengan yang ada di database
+            if (password_verify($password, $row['password'])) {
+                // Pseudocode: Jika login berhasil, simpan informasi pengguna di sesi
+                $_SESSION['user_id'] = $row['id']; // Simpan user ID di sesi
+                $_SESSION['email'] = $row['email']; // Simpan email di sesi
+                $_SESSION['name'] = $row['name']; // Simpan nama di sesi
+                header("Location: index.php"); // Pseudocode: Alihkan ke halaman utama
+                exit; // Pastikan skrip berhenti setelah pengalihan
+            } else {
+                // Pseudocode: Jika kata sandi salah, tampilkan pesan error
+                throw new Exception("Kata sandi salah.");
+            }
+        } else {
+            // Pseudocode: Jika email tidak ditemukan, tampilkan pesan error
+            throw new Exception("Email tidak terdaftar.");
+        }
+
+        // Pseudocode: Tutup prepared statement setelah selesai
+        $stmt->close();
+    } catch (Exception $e) {
+        // Tangkap exception dan tampilkan pesan error
+        $error_message = $e->getMessage();
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
